@@ -10,8 +10,8 @@ services:
             MYSQL_PASSWORD: test
             MYSQL_ROOT_PASSWORD: test 
         volumes:
-            - ./dump:/docker-entrypoint-initdb.d
-            - ./conf:/etc/mysql/conf.d
+            - ./dump:/docker-entrypoint-initdb.d:z
+            - ./conf:/etc/mysql/conf.d:z
             - persistent:/var/lib/mysql
         networks:
             - default
@@ -20,7 +20,7 @@ services:
         ports: 
             - "80:80"
         volumes:
-            - ./www:/var/www/html
+            - ./www:/var/www/html:z
         links:
             - db
         networks:
