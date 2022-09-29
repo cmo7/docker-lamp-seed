@@ -1,12 +1,14 @@
 # docker-lamp
 
-Docker with Apache, MySQL 8.0, PHPMyAdmin and PHP.
+another Docker with Apache, MySQL 8.0, PHPMyAdmin and PHP.
 
 I use docker-compose as an orchestrator. To run these containers:
 
 ``` bash
 docker-compose up -d
 ```
+
+Unlike most of this docker compose configs, this one is selinux ready. Just add the `:z` flags, my dudes.
 
 ## Services
 - phpmyadmin at [http://127.0.0.1:8000](http://127.0.0.1:8000)
