@@ -17,10 +17,26 @@ Unlike most of this docker compose configs, this one is selinux ready. Just add 
 ## Project Setup
 Clone YourProject on `www/` and then, open web [http://127.0.0.1/YourProject](http://127.0.0.1/YourProject)
 
+Don't forget to modify the .gitignore file
 
 ## Other
 Run MySQL client:
 
 ```bash
 docker-compose exec db mysql -u root -p
+```
+
+
+Wordpress direct problems
+
+```php
+define('FS_METHOD', 'direct');
+```
+
+Permissions problems
+
+```bash
+docker exec -u root -it {CONTAINER_ID} /bin/bash
+chown -R www-data wp-content
+chmod -R 755 wp-content
 ```
